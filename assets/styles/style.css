@@ -1,6 +1,11 @@
+/* 
+    All elements
+*/
+
 :root {
     --facebook-blue: rgb(24, 119, 242);
     --background-gray: #F0F2F5;
+    --background-gray-darker: #e6e9ec;
 }
 
 *{
@@ -13,6 +18,10 @@ body{
     background-color: var(--background-gray);
 }
 
+/* 
+    Header
+*/
+
 header {
     width: 100vw;
     height: 56px;
@@ -21,7 +30,14 @@ header {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 1px 1px hsl(0, 0%, 88%);
+    position: sticky;
+    top: 0;
 }
+
+/* 
+    Logo and SearchBar   
+*/
+
 .icon-and-search {
     display:flex;
     align-items: center;
@@ -61,6 +77,10 @@ input#search-bar:focus {
     text-indent:0px
 }
 
+/* 
+    Central icons (homepage, friends, groups, etc.)
+*/
+
 .central-icons {
     display:flex;
     align-items:center;
@@ -72,6 +92,7 @@ input#search-bar:focus {
 }   
 
 .icon-container {
+    position:relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,20 +118,120 @@ input#search-bar:focus {
     background-color: white;
 }
 
-.homepage-label {
-    position: relative;
-    bottom: -10px;
-    height: 20px;
-    color: white;
-    background-color: black; 
+.central-icon-label {
+    display: none;
 }
 
-footer {
+#homepage-container:hover .central-icon-label,
+#friends-container:hover .central-icon-label,
+#watch-container:hover .central-icon-label,
+#marketplace-container:hover .central-icon-label,
+#groups-container:hover .central-icon-label {
     display: flex;
     justify-content: center;
-    margin-top: 80vh;
+    align-items:center;
+    position: absolute;
+    font-size: 14px;    
+    padding: 5px;
+    border-radius: 4px;
+    bottom: -35px;
+    height: 30px;
+    color: white;
+    background-color: black; 
+    opacity: .7;
 }
 
+/* 
+    Account Settings
+*/
+
 .account-settings {
-    width: 357px;
+    height: 56px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#user-image{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    background-color: var(--facebook-blue);
+    border-radius: 50%;
+}
+
+#user-profile {
+    display: flex;
+    align-items: center;   
+    height: 36px; 
+    border-radius: 18px;
+    width: 120px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#user-profile:hover {
+    background-color: var(--background-gray);
+}
+
+#user-profile img {
+    margin: 0 5px 0 10px;
+}
+
+.account-settings .icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--background-gray);
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.account-settings .icon:hover {
+    background-color: var(--background-gray-darker);
+}
+
+#messenger-icon {
+    width: 20px;
+}
+
+#notification-bell {
+    width: 22px;
+}
+
+#more-icon {
+    width: 12px;
+}
+
+/* 
+    NavBar
+*/
+
+nav {
+    border-right: 1px solid black;
+    width: 296px;
+    height: 100vh;
+    position: fixed;
+}
+
+/* 
+    Footer
+*/
+
+footer {
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    color: #666666;
+}
+
+footer a {
+    color: #888888;
 }
